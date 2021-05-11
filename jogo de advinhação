@@ -1,0 +1,34 @@
+print("*********************************")
+print('Bem vindo ao jogo de adivinhação!')
+print("*********************************")
+
+numero_secreto = 42
+total_tentativas = 3
+
+
+for rodada in range (1, total_tentativas + 1):    #laço contavel com fim
+
+    print("Tentativa {} de {}".format(rodada, total_tentativas))
+    chute_str = input("Digite um numero de 1 a 100: ")
+    print("Você digitou",chute_str)
+    chute = int(chute_str)
+    if(chute < 1 or chute > 100 ):
+        print("Voce deve digitar um numero de 1 a 100")
+        continue                #recomeça o laço a partir do for
+
+    acertou = chute == numero_secreto
+    maior   = chute > numero_secreto
+    menor   = chute < numero_secreto
+
+    if (acertou):
+        print("Voce acertou")
+        break                   #para o laço encerrando o programa
+    else:
+        if(maior):
+            print("Voce errou! O seu chute foi maior que o numero secreto.")
+        elif (menor):
+            print("Voce errou! O seu chute foi menor que o numero secreto.")
+    rodada = rodada + 1
+print("Fim do Jogo!")
+
+
