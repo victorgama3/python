@@ -45,7 +45,7 @@ def jogar():
             elif (menor):
                 print("Voce errou! O seu chute foi menor que o numero secreto.")
 
-        pontos_perdidos = abs(numero_secreto - chute) # 40 - 20 = 20 pontos perdidos
+        pontos_perdidos = abs(numero_secreto - chute) # abs(não deixa o jogo dar pontuaçao negativa no caso de 40 - 60 = -20)
         pontos = pontos - pontos_perdidos
     print("Fim do Jogo!")
 
